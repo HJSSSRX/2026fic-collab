@@ -1,0 +1,15 @@
+# Evidence files (too large for git)
+*.E01
+*.e01
+*.vmdk
+*.vhd
+*.dd
+*.raw
+*.zip
+*.bak
+mobile/backup/
+computer/mounted/
+server/vmdk_root/
+
+# Keep shared/ tracked
+!shared/

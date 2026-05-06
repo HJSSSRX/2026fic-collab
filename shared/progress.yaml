@@ -1,0 +1,29 @@
+# 2026FIC 初赛 — Progress Tracker
+computer_analyst:
+  status: idle
+  current_task: ""
+  completed: []
+  pending:
+    - "计算机取证 Q1-Q10 (10题)"
+
+mobile_analyst:
+  status: idle
+  current_task: ""
+  completed: []
+  pending:
+    - "手机取证 Q1-Q17 (17题)"
+
+server_analyst:
+  status: idle
+  current_task: ""
+  completed: []
+  pending:
+    - "服务器取证 Q1-Q17 (17题)"
+    - "互联网取证 Q1-Q3 (3题)"
+
+binary_analyst:
+  status: idle
+  current_task: ""
+  completed: []
+  pending:
+    - "二进制程序取证 Q1-Q5 (5题)"
