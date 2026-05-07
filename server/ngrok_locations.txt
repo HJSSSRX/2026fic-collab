@@ -1,0 +1,243 @@
+﻿
+======================================================================
+# ngrok agent yml #1 @ 0x709A9EE68 (28826.6MB)
+# Reading 0x709A9EA68 - 0x709A9FA68
+======================================================================
+  819c837d54a6ed09abc77a8560a66f.php|
+  819c837d54a6ed09abc77a8560a66f.php
+  version: "3"
+  agent:
+  authtoken: 3CIUoZ26RGTLqfk7SS41Exw4bG0_5xHeahQZMhxn3J28BP8DV
+  ngrok.yml
+  ngrok.ymln
+  ngrok.yml
+  1a83f2573d3600ee28bc7d0c0b35c10b.jpg
+  a94fad635353cc8e00e8f810f77411e1.jpg
+  986be1f46464a5d9497c273cbbc1072a.jpg
+  15ed11e353d07692805af1cfe3d1418c.jpg
+  ff4ed4442c8cfa85934e2fc71cb00c2a.jpg
+  2eadb0f608fda2821b24f3ea600fdd26.jpg
+  648c72938973a3d09fc9e2e394c32843.jpg
+  18dcd6e81092b2e65729077514005983.jpg
+  335c264a81382c01b59bfe39881bf34c.jpg
+  82da690dc9e3f8c2b833c37ac3b03b5b.jpgl
+  1a83f2573d3600ee28bc7d0c0b35c10b.jpgj
+  a94fad635353cc8e00e8f810f77411e1.jpgh
+  986be1f46464a5d9497c273cbbc1072a.jpgf
+  15ed11e353d07692805af1cfe3d1418c.jpgd
+  ff4ed4442c8cfa85934e2fc71cb00c2a.jpgb
+  2eadb0f608fda2821b24f3ea600fdd26.jpg
+  335c264a81382c01b59bfe39881bf34c.jpgf
+  15ed11e353d07692805af1cfe3d1418c.jpg
+  82da690dc9e3f8c2b833c37ac3b03b5b.jpgb
+  2eadb0f608fda2821b24f3ea600fdd26.jpgh
+  986be1f46464a5d9497c273cbbc1072a.jpgj
+
+======================================================================
+# ngrok agent yml #2 @ 0x709C6A61E (28828.4MB)
+# Reading 0x709C6A21E - 0x709C6B21E
+======================================================================
+  version: "3"
+  agent:
+  authtoken: 3CIUoZ26RGTLqfk7SS41Exw4bG0_5xHeahQZMhxn3J28BP8DV
+  ngrok.yml
+  ngrok.ymln
+  ngrok.yml
+  1a83f2573d3600ee28bc7d0c0b35c10b.jpg
+  a94fad635353cc8e00e8f810f77411e1.jpg
+  986be1f46464a5d9497c273cbbc1072a.jpg
+  15ed11e353d07692805af1cfe3d1418c.jpg
+  ff4ed4442c8cfa85934e2fc71cb00c2a.jpg
+  2eadb0f608fda2821b24f3ea600fdd26.jpg
+  648c72938973a3d09fc9e2e394c32843.jpg
+  18dcd6e81092b2e65729077514005983.jpg
+  335c264a81382c01b59bfe39881bf34c.jpg
+  82da690dc9e3f8c2b833c37ac3b03b5b.jpgl
+  1a83f2573d3600ee28bc7d0c0b35c10b.jpgj
+  a94fad635353cc8e00e8f810f77411e1.jpgh
+  986be1f46464a5d9497c273cbbc1072a.jpgf
+  15ed11e353d07692805af1cfe3d1418c.jpgd
+  ff4ed4442c8cfa85934e2fc71cb00c2a.jpgb
+  2eadb0f608fda2821b24f3ea600fdd26.jpg
+  335c264a81382c01b59bfe39881bf34c.jpgf
+  15ed11e353d07692805af1cfe3d1418c.jpg
+  82da690dc9e3f8c2b833c37ac3b03b5b.jpgb
+  2eadb0f608fda2821b24f3ea600fdd26.jpgh
+  986be1f46464a5d9497c273cbbc1072a.jpgj
+
+======================================================================
+# ngrok server config (port 3000) @ 0x7BE569A49 (31717.4MB)
+# Reading 0x7BE569649 - 0x7BE56A649
+======================================================================
+  \U"now-
+  Ppicke
+  q"collapjZ
+  Q"noti\
+  F  "2U
+  "browser
+  "q2MgvJVWK
+  apiVersion: 1
+  providers:
+  - name: Test-Cluster
+  folder: Test-Cluster
+  type: file
+  disableDeletion: false
+  allowUiUpdates: true
+  editable: true
+  updateIntervalSeconds: 30
+  options:
+  path: /root/.tiup/data/VGotbnt/grafana/dashboards
+  [server]
+  # The ip address to bind to, empty will bind to all interfaces
+  http_addr = 0.0.0.0
+  # The http port to use
+  http_port = 3000
+  OmetaD
+  bstatus
+  user_fileE
+  format_schema
+  system
+  db_1.sql
+  db_2.sql
+  ATTACH TABLE t_12
+  host String,
+  table_name
+  grantor Null#
+  timestamp!
+  MyDateTime(0)(
+  V_priv)
+  dUInt64"
+  ocolumn#
+  _tidb_rowid <
+  ENGINE = DeltaMerge((
+  , '{"cols":[
+  mment":"","default":null
+  pid":1,"
+  ":{"L":"[
+  },"offset":0,"origin_Z
+  state":5,"typJ
+  AChar4
+  "utf8mb4","Coll(
+  _bin","Decimal`
+  TElems
+  Flag":4099
+  en":255,"Tp
+  general_ci
+  "CURRENT_TIMESTAMP
+  !ibinary
+  ["Select","Inser
+  prop","G
+  dex","Alt
+  View","Show
+
+======================================================================
+# .ngrok.io reference #1 @ 0x78F008EA4 (30960.0MB)
+# Reading 0x78F008AA4 - 0x78F009AA4
+======================================================================
+  </html>
+  FFTMjU
+  `cmapJ
+  .webfX
+  ,KRXE#Y!-
+  +X!#!zX
+  +\X  G#Faj X db8
+  +\X# XKS
+  !!!!!Y-
+  +\X  G#Faj
+  G#F#aj` X db8
+  7347#7367632
+
+======================================================================
+# .ngrok.io ref #2 @ 0x7973053A8 (31091.0MB)
+# Reading 0x797304FA8 - 0x797305FA8
+======================================================================
+  %suserProjectoutput filevalue for "element of broken-pathsource-pathrename-pathVoteResult(!!timestampTESTING KEYDoHandshakegooglecloud
+  [%dm%s
+  goal , cons/mark  maxTrigger= pages/byte
+  s.sweepgen= allocCount timer_deletens} value: {}, want {r1= [recovered]bad recoveryGOTRACEBACK=bad g statusentersyscallwirep: p->m=) p->status=releasep: m= sysmonwait= preemptoff=cas64 failed m->gsignal=-byte limit
+
+======================================================================
+# .ngrok-free reference @ 0x7779110DB (30585.1MB)
+# Reading 0x777910CDB - 0x777911CDB
+======================================================================
+  eWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/3e25c86f44da010aab2ac6ab91e8536e.jpg HTTP/1.1" 404 89 "https://blemish-junior-unengaged.ngrok-free.dev/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/f6ffb8615e4276870f5a53fe3b727237.jpg HTTP/1.1" 404 89 "https://blemish-junior-unengaged.ngrok-free.dev/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/0b691cebea768ec697f9892d6021c2b1.jpg HTTP/1.1" 404 89 "https://blemish-junior-unengaged.ngrok-free.dev/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/b5cfd9ebeecebebc1568f0208b70c092.jpg HTTP/1.1" 404 89 "https://blemish-junior-unengaged.ngrok-free.dev/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/43278ca8cba1785077ef4076f5622c1b.jpg HTTP/1.1" 404 89 "https://blemish-junior-unengaged.ngrok-free.dev/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/b34eec5fe81856555bc95400ed14ba73.jpg HTTP/1.1" 404 89 "https://blemish-junior-unengaged.ngrok-free.dev/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/1f4035084fdf46100229b3993dc9a944.jpg HTTP/1.1" 404 89 "https://blemish-junior-unengaged.ngrok-free.dev/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/464d47b149376c8dbb0454e0e59697c8.jpg HTTP/1.1" 404 89 "https://blemish-junior-unengaged.ngrok-free.dev/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/81bbf7bbf3bbe591946ea8830393bed5.jpg HTTP/1.1" 404 89 "https://blemish-junior-unengaged.ngrok-free.dev/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/fbd849aed2536d63041ec93a6cebd448.jpg HTTP/1.1" 404 89 "https://blemish-junior-unengaged.ngrok-free.dev/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/83f4402e5d98fba6da18bbca0d1c42b3.jpg HTTP/1.1" 404 89 "https://blemish-junior-unengaged.ngrok-free.dev/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  ::1 - - [15/Apr/2026:06:38:32 -0400] "GET /upload/vod/20260415-1/07b2eeabfe4c89cdabecee58ddcb6866.jp
+
+======================================================================
+# t.me/maccms_channel @ 0x719ACE441 (29082.8MB)
+# Reading 0x719ACE041 - 0x719ACF041
+======================================================================
+  welcome.html~
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="__STATIC__/layui/css/layui.css?v=1024">
+  <link rel="stylesheet" href="__STATIC__/css/update.css?{$MAC_VERSION}">
+  </head>
+  <body>
+  <div class="updae_from">
+  <img class="update_bg" src="__STATIC__/images/upgrade_pop_rocket_bg@2x.png" alt="" srcset="">
+  <div class="update_content">
+  <div class="update_title">
+  <p>${new_v}>>></p>
+  </div>
+  <a class="group_link" target="_blank" href="https://t.me/maccms_channel">Telegram
+  https://t.me/maccms_channel</a>
+  <a class="group_link" target="_blank"
+  href="https://github.com/magicblack">Github
+  https://github.com/magicblack</a>
+  <div class="flex-col flex my-[20px] gap-1">
+  <a class="j-iframe text-[#53D19C]" title="
+  data-href="${ADMIN_PATH}/admin/update/step1.html?file=${package}">
+  <a href="https://github.com/magicblack/maccms_down/raw/master/maccms10_update.zip">
+  <a href="https://cdn.jsdelivr.net/gh/magicblack/maccms_down@master/maccms10_update.zip">
+  </div>
+  <div class="update_list">
+  ${update_content}
+  </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="__STATIC__/layui/layui.js"></script>
+  </body>
+  </html>
+  update.html~
+  {include file="../../../application/admin/view_new/public/head" /}
+  <div class="page-container">
+  <fieldset class="layui-elem-field layui-field-title" class="mt10">
+  <legend>{:lang('admin/index/quickmenu/name')}</legend>
+  </fieldset>
+  <blockquote class="layui-elem-quote layui-quote-nm">
+  {:lang('admin/index/quickmenu/tip')}
+  </blockquote>
+  <form class="layui-form" action="">
+  <input type="hidden" name="__token__" value="{$Request.token}" />
+  <div class="layui-form-item layui-form-text">
+  <textarea name="quickmenu" placeholder="{:lang('filed_empty')}" class="layui-textarea" style="height:600px; resize:none">{$quickmenu}</textarea>
+  </div>
+  <div class="layui-form-item center">
+  <div class="layui-input-block">
+  <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">{:lang('btn_save')}</button>
+  <button class="layui-btn layui-btn-primary" type="reset">{:lang('btn_reset')}</button>
+  </div>
+  </div>
+  </form>
+  </div>
+  {include file="../../../application/admin/view_new/public/foot" /}
+  </body>
+
+
+Done.

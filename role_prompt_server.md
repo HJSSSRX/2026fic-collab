@@ -207,27 +207,81 @@ Select-String -Path "E:\项目\自动化取证\knowledge\solved\*.md" -Pattern "
 
 ---
 
-## 协作协议
+## 🔗 协作协议（v3 HTTP Hub）
 
-**工作目录**: `E:\ffffff-JIANCAI\2026FIC团体赛\case\`
-**共享目录**: `E:\ffffff-JIANCAI\2026FIC团体赛\case\shared\`
+你是 4 角色协作团队的一员。所有协作必须通过 **HTTP Hub** 完成。**这不是建议，是强制流程。**
 
-发现重要线索时，追加到 `shared/findings.yaml`：
-```yaml
-- id: F001
-  time: "2026-05-06 23:00"
-  from: server_analyst
-  type: evidence
-  summary: "简要描述"
-  detail: "详细信息、文件路径、证据"
-  related_to: [computer_analyst, mobile_analyst]
+### Hub 地址
+你是**本机角色**：`$Hub = "http://127.0.0.1:8765"`
+
+### 启动时必做（30 秒）— 不做完不准开工
+```powershell
+$Hub = "http://127.0.0.1:8765"
+
+# 1. 验证 Hub 可达
+try { Invoke-RestMethod "$Hub/ping" -TimeoutSec 3 } catch { Write-Host "Hub 离线，停工通知用户"; exit }
+
+# 2. 拉取当前态势：主设计师策略 + 队友发现 + 进度 + 卡点 + 给你的提问
+Invoke-RestMethod "$Hub/session"   | ConvertTo-Json -Depth 5
+Invoke-RestMethod "$Hub/findings"  | ConvertTo-Json -Depth 5
+Invoke-RestMethod "$Hub/progress"  | ConvertTo-Json -Depth 5
+Invoke-RestMethod "$Hub/questions?to=server_analyst"
 ```
 
-### 跨角色线索
-- 如发现**Telegram群组/频道ID** → 可能与手机聊天记录关联
-- 如发现**USDT地址** → 与手机端和U盘交易记录关联
-- 如发现**ngrok域名** → 与计算机端VPN/代理配置关联
-- 网站**用户数据** → 与手机端推广记录关联
+### 解出每题后必做（强制）— 不调 POST = 这题没解出
+```powershell
+$body = @{
+    from       = "server_analyst"
+    type       = "evidence"        # evidence / answer / blocker
+    summary    = "Q1: OS版本=Debian 13 trixie"   # 简短一行
+    detail     = "/etc/os-release; 来源: swap分区中提取"
+    related_to = @()                # 如关联其他角色，如 @("computer_analyst")
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/findings" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 进度推进（每完成一阶段一次）
+```powershell
+$body = @{
+    status       = "in_progress"    # idle / in_progress / blocked / paused / done
+    current_task = "Q5 网站后台入口"
+    completed    = @("Q1", "Q16")
+    pending      = @("Q2-Q15", "Q17", "互联网Q1-Q3")
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/progress/server_analyst" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 遇到卡点（写完立刻做下一题，主设计师会路由）
+```powershell
+$body = @{
+    from    = "server_analyst"
+    blocker = "VG volum LV root 加密区无法访问"
+    needs   = "WSL ewfmount + cryptsetup; 主设计师本机协助"
+    status  = "open"
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/session/blocker" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 跨角色提问与回答
+```powershell
+# 提问别人
+$body = @{
+    from     = "server_analyst"
+    to       = "mobile_analyst"
+    question = "你的聊天记录里见过 ngrok 域名 xxx.ngrok.io 吗？"
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/questions" -Method POST -Body $body -ContentType "application/json"
+
+# 回答别人（id 形如 Q001）
+$body = @{ answer = "我这边的答案是..." } | ConvertTo-Json
+Invoke-RestMethod "$Hub/questions/Q001/reply" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 跨角色线索（你必须主动 push 给相关角色）
+- **Telegram 群组/频道 ID** → `related_to = @("mobile_analyst")`，与手机聊天记录关联
+- **USDT 钱包地址** → `related_to = @("mobile_analyst","binary_analyst")`，与手机 Q6/Q7 + U 盘交易记录三方对照
+- **ngrok 域名 / 代理配置** → `related_to = @("computer_analyst")`，与计算机端 VPN/代理关联
+- 网站**用户数据 / 推广链路** → `related_to = @("mobile_analyst")`，可能与手机推广记录关联
 
 ---
 

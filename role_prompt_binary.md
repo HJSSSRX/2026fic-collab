@@ -119,25 +119,80 @@ Select-String -Path "E:\项目\自动化取证\knowledge\solved\*.md" -Pattern "
 
 ---
 
-## 协作协议
+## 🔗 协作协议（v3 HTTP Hub）
 
-**共享目录**: `E:\ffffff-JIANCAI\2026FIC团体赛\case\shared\`
+你是 4 角色协作团队的一员。所有协作必须通过 **HTTP Hub** 完成。**这不是建议，是强制流程。**
 
-发现重要线索时，追加到 `shared/findings.yaml`：
-```yaml
-- id: F001
-  time: "2026-05-06 23:00"
-  from: binary_analyst
-  type: evidence
-  summary: "简要描述"
-  detail: "详细信息"
-  related_to: [mobile_analyst, server_analyst]
+### Hub 地址
+你是**本机角色**：`$Hub = "http://127.0.0.1:8765"`
+
+### 启动时必做（30 秒）— 不做完不准开工
+```powershell
+$Hub = "http://127.0.0.1:8765"
+
+# 1. 验证 Hub 可达
+try { Invoke-RestMethod "$Hub/ping" -TimeoutSec 3 } catch { Write-Host "Hub 离线，停工通知用户"; exit }
+
+# 2. 拉取当前态势：主设计师策略 + 队友发现 + 进度 + 卡点 + 给你的提问
+Invoke-RestMethod "$Hub/session"   | ConvertTo-Json -Depth 5
+Invoke-RestMethod "$Hub/findings"  | ConvertTo-Json -Depth 5
+Invoke-RestMethod "$Hub/progress"  | ConvertTo-Json -Depth 5
+Invoke-RestMethod "$Hub/questions?to=binary_analyst"
 ```
 
-### 跨角色线索
-- 解密后的**交易记录**中的钱包地址 → 与手机端(Q6/Q7)的USDT钱包地址交叉验证
-- 如发现**域名/IP** → 标记 `related_to: [server_analyst]`
-- 解密后的文件内容 → 可能包含网站运营相关证据
+### 解出每题后必做（强制）— 不调 POST = 这题没解出
+```powershell
+$body = @{
+    from       = "binary_analyst"
+    type       = "evidence"        # evidence / answer / blocker
+    summary    = "Q1: SampleVC.exe MD5=xxx"   # 简短一行
+    detail     = "命令、来源、证据路径"
+    related_to = @()                # 关联角色，如 @("mobile_analyst","server_analyst")
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/findings" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 进度推进（每完成一阶段一次）
+```powershell
+$body = @{
+    status       = "in_progress"    # idle / in_progress / blocked / paused / done
+    current_task = "Q3 密码逆向"
+    completed    = @("Q1", "Q2")
+    pending      = @("Q3", "Q4", "Q5")
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/progress/binary_analyst" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 遇到卡点（写完立刻做下一题，主设计师会路由）
+```powershell
+$body = @{
+    from    = "binary_analyst"
+    blocker = "卡在...的具体描述"
+    needs   = "需要的资源/工具/线索"
+    status  = "open"
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/session/blocker" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 跨角色提问与回答
+```powershell
+# 提问别人
+$body = @{
+    from     = "binary_analyst"
+    to       = "mobile_analyst"
+    question = "你抓到过 USDT 钱包 0xABC... 吗？"
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/questions" -Method POST -Body $body -ContentType "application/json"
+
+# 回答别人（id 形如 Q001）
+$body = @{ answer = "我这边的答案是..." } | ConvertTo-Json
+Invoke-RestMethod "$Hub/questions/Q001/reply" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 跨角色线索（你必须主动 push 给相关角色）
+- 解密后**交易记录**钱包地址 → finding 中 `related_to = @("mobile_analyst","server_analyst")`，与手机 Q6/Q7 的 USDT 钱包交叉验证
+- 发现**域名/IP** → `related_to = @("server_analyst")`
+- 解密后的文件内容 → 可能含网站运营证据，`related_to = @("server_analyst")`
 
 ---
 

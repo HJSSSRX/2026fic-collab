@@ -1,0 +1,242 @@
+﻿disk1 size: 60.00GB
+disk2 size: 60.00GB
+
+############################################################
+# Scanning 检材3-1 (60.0GB)
+############################################################
+  ... 3.0GB scanned
+  ... 6.0GB scanned
+  ... 9.0GB scanned
+  ... 12.0GB scanned
+  ... 15.0GB scanned
+  ... 18.0GB scanned
+  ... 21.0GB scanned
+  ... 24.0GB scanned
+  ... 27.0GB scanned
+  ... 30.0GB scanned
+  ... 33.0GB scanned
+  ... 36.0GB scanned
+  ... 39.0GB scanned
+  ... 42.0GB scanned
+  ... 45.0GB scanned
+  ... 48.0GB scanned
+  ... 51.0GB scanned
+  ... 54.0GB scanned
+  ... 57.0GB scanned
+
+############################################################
+# Scanning 检材3-2 (60.0GB)
+############################################################
+  ... 3.0GB scanned
+  ... 6.0GB scanned
+  ... 9.0GB scanned
+  ... 12.0GB scanned
+  ... 15.0GB scanned
+  ... 18.0GB scanned
+  ... 21.0GB scanned
+  ... 24.0GB scanned
+  ... 27.0GB scanned
+  ... 30.0GB scanned
+  ... 33.0GB scanned
+  ... 36.0GB scanned
+  ... 39.0GB scanned
+  ... 42.0GB scanned
+  ... 45.0GB scanned
+  ... 48.0GB scanned
+  ... 51.0GB scanned
+  ... 54.0GB scanned
+  ... 57.0GB scanned
+
+
+======================================================================
+RESULTS BY PATTERN
+======================================================================
+
+--- 'b'tunnels:'' [ngrok-yaml] (10 hits) ---
+  [检材3-1] @ 0x7F1F5FCB3 (32543.4MB):
+    | - "2001:cafe:face::1/64"
+    | routes:
+    | - to: default
+    | via: 1.1.1.254
+    | tunnels:
+    | he-ipv6:
+  [检材3-1] @ 0x7F3054C18 (32560.3MB):
+    | version: 2
+    | tunnels:
+    | wg0: #server
+    | mode: wireguard
+    | addresses: [10.10.10.20/24]
+    | key: 4GgaQCy68nzNsUE5aJ9fuLzHhB65tAlwbmA72MWnOm8=
+  [检材3-1] @ 0x86BF0AF43 (34495.0MB):
+    | l_types:
+    | cmd_type = tunnel_types[tunnel_type]
+    | if tunnel_type in ssh_tunnels:
+    | tunnels = ssh_tunnels[tunnel_type]
+    | for tunnel in tunnels:
+    | if spawn_local_ssh==False:
+  [检材3-1] @ 0x86BF0AFA5 (34495.0MB):
+    | h_tunnels:
+    | tunnels = ssh_tunnels[tunnel_type]
+    | for tunnel in tunnels:
+    | if spawn_local_ssh==False:
+    | tunnel = quote(str(tunnel))
+    | ssh_options = ssh_options + ' -' + cmd_type + ' ' + str(tunnel)
+  [检材3-2] @ 0x18D4A83DD (6356.7MB):
+
+--- 'b'authtoken'' [ngrok-yaml] (11 hits) ---
+  [检材3-1] @ 0x709A9EE68 (28826.6MB):
+    | agent:
+    | authtoken: 3CIUoZ26RGTLqfk7SS41Exw4bG0_5xHeahQZMhxn3J28BP8DV
+  [检材3-1] @ 0x709C6A61E (28828.4MB):
+    | agent:
+    | authtoken: 3CIUoZ26RGTLqfk7SS41Exw4bG0_5xHeahQZMhxn3J28BP8DV
+  [检材3-1] @ 0x709EA2E68 (28830.6MB):
+    | agent:
+    | authtoken: 3CIUoZ26RGTLqfk7SS41Exw4bG0_5xHeahQZMhxn3J28BP8DV
+  [检材3-1] @ 0x729A9EE68 (29338.6MB):
+    | agent:
+    | authtoken: 3CIUoZ26RGTLqfk7SS41Exw4bG0_5xHeahQZMhxn3J28BP8DV
+  [检材3-1] @ 0x729C6A61E (29340.4MB):
+    | agent:
+    | authtoken: 3CIUoZ26RGTLqfk7SS41Exw4bG0_5xHeahQZMhxn3J28BP8DV
+
+--- 'b'.ngrok.io'' [ngrok-domain] (10 hits) ---
+  [检材3-1] @ 0x78F008EA4 (30960.0MB):
+  [检材3-1] @ 0x7973053A8 (31091.0MB):
+  [检材3-1] @ 0x7973053B3 (31091.0MB):
+  [检材3-1] @ 0x7973053BE (31091.0MB):
+  [检材3-1] @ 0x7973053C9 (31091.0MB):
+
+--- 'b'.ngrok-free.'' [ngrok-domain] (11 hits) ---
+  [检材3-1] @ 0x7779110DB (30585.1MB):
+  [检材3-1] @ 0x7779111F7 (30585.1MB):
+  [检材3-1] @ 0x777911313 (30585.1MB):
+  [检材3-1] @ 0x77791142F (30585.1MB):
+  [检材3-1] @ 0x77791154B (30585.1MB):
+
+--- 'b'.ngrok.app'' [ngrok-domain] (3 hits) ---
+  [检材3-2] @ 0x18D3C7E5D (6355.8MB):
+    | # add Traffic Policy config for auth, security, routing + more
+    | ngrok http 80 --url https://example.ngrok.app --traffic-policy-file tp.yml
+    | # load balance between endpoints (run in two terminals)
+    | ngrok http 8081 --url https://your-api.ngrok.app --pooling-enabled
+    | ngrok http 8080 --url https://your-api.ngrok.app --pooling-enabled
+    | # forward to a file URL to serve files from a directory
+  [检材3-2] @ 0x18D3C7EE8 (6355.8MB):
+    | # load balance between endpoints (run in two terminals)
+    | ngrok http 8081 --url https://your-api.ngrok.app --pooling-enabled
+    | ngrok http 8080 --url https://your-api.ngrok.app --pooling-enabled
+    | # forward to a file URL to serve files from a directory
+  [检材3-2] @ 0x18D3C7F2D (6355.8MB):
+    | ttp 8081 --url https://your-api.ngrok.app --pooling-enabled
+    | ngrok http 8080 --url https://your-api.ngrok.app --pooling-enabled
+    | # forward to a file URL to serve files from a directory
+
+--- 'b't.me/'' [telegram-link] (11 hits) ---
+  [检材3-1] @ 0x719ACE441 (29082.8MB):
+    | <p>${new_v}>>></p>
+    | </div>
+    | <a class="group_link" target="_blank" href="https://t.me/maccms_channel">Telegram群   https://t.me/maccms_channel</a>
+    | <a class="group_link" target="_blank"
+    | href="https://github.com/magicblack">Github源码   https://github.com/magicblack</a>
+    | <div class="flex-col flex my-[20px] gap-1">
+  [检材3-1] @ 0x719ACE46C (29082.8MB):
+    | <a class="group_link" target="_blank" href="https://t.me/maccms_channel">Telegram群   https://t.me/maccms_channel</a>
+    | <a class="group_link" target="_blank"
+    | href="https://github.com/magicblack">Github源码   https://github.com/magicblack</a>
+    | <div class="flex-col flex my-[20px] gap-1">
+    | <a class="j-iframe text-[#53D19C]" title="点击进入升级"
+    | data-href="${ADMIN_PATH}/admin/update/step1.html?file=${package}">
+  [检材3-1] @ 0x739ACE441 (29594.8MB):
+    | <p>${new_v}>>></p>
+    | </div>
+    | <a class="group_link" target="_blank" href="https://t.me/maccms_channel">Telegram群   https://t.me/maccms_channel</a>
+    | <a class="group_link" target="_blank"
+    | href="https://github.com/magicblack">Github源码   https://github.com/magicblack</a>
+    | <div class="flex-col flex my-[20px] gap-1">
+  [检材3-1] @ 0x739ACE46C (29594.8MB):
+    | <a class="group_link" target="_blank" href="https://t.me/maccms_channel">Telegram群   https://t.me/maccms_channel</a>
+python3 : Traceback (most recent call last):
+所在位置 行:1 字符: 1
++ python3 "E:\ffffff-JIANCAI\2026FIC团体赛\case\server\hunt_strings.py" 2> ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "E:\ffffff-JIANCAI\2026FIC团体赛\case\server\hunt_strings.py", line 133, in <module>
+    print(f"    | {l[:180]}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'gbk' codec can't encode character '\ufffd' in position 12: illegal multibyte sequence
+    | <a class="group_link" target="_blank"
+    | href="https://github.com/magicblack">Github源码   https://github.com/magicblack</a>
+    | <div class="flex-col flex my-[20px] gap-1">
+    | <a class="j-iframe text-[#53D19C]" title="点击进入升级"
+    | data-href="${ADMIN_PATH}/admin/update/step1.html?file=${package}">
+  [检材3-1] @ 0x76F828B6D (30456.2MB):
+    | </div>
+    | <a class="group_link" target="_blank" href="https://t.me/maccms_channel">Telegram群   https://t.me/maccms_channel</a>
+    | <a class="group_link" target="_blank"
+    | href="https://github.com/magicblack">Github源码   https://github.com/magicblack</a>
+    | <div class="flex-col flex my-[20px] gap-1">
+    | <a class="j-iframe text-[#53D19C]" title="点击进入升级"
+
+--- 'b'telegram'' [telegram-ref] (11 hits) ---
+  [检材3-1] @ 0x700BB3724 (28683.7MB):
+  [检材3-1] @ 0x700BB3735 (28683.7MB):
+  [检材3-1] @ 0x700D5E1E6 (28685.4MB):
+  [检材3-1] @ 0x700D5E1F7 (28685.4MB):
+  [检材3-1] @ 0x700DE1B49 (28685.9MB):
+
+--- 'b'TG-'' [telegram-ref] (11 hits) ---
+  [检材3-1] @ 0x706C1AEC0 (28780.1MB):
+  [检材3-1] @ 0x71CDD152A (29133.8MB):
+  [检材3-1] @ 0x71CDD1D5C (29133.8MB):
+  [检材3-1] @ 0x71CDD3B8B (29133.8MB):
+  [检材3-1] @ 0x71CDD7060 (29133.8MB):
+
+--- 'b'telegram-bot'' [telegram-bot] (11 hits) ---
+  [检材3-1] @ 0x7869B39DD (30825.7MB):
+    | lliu@debian.org>
+    | Architecture: all
+    | Depends: darknet, python3-opencv, python3-opengl, python3-python-telegram-bot, python3-logzero, python3-paho-mqtt, python3:any
+    | Recommends: mosquitto
+    | Description: deep learning gateway - python3 modules
+    | Homepage: https://github.com/DT42/BerryNet
+  [检材3-1] @ 0x7876BD652 (30838.7MB):
+    | cff349011
+    | SHA256: c6438f9e3b0af83c87fd6a5cf10ae3a5ae10a96c63cd5215f9e4e7b1e0a9bce8
+    | Package: libwww-telegram-botapi-perl
+    | Version: 0.12-2
+    | Installed-Size: 55
+    | Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+  [检材3-1] @ 0x7876BD810 (30838.7MB):
+    | : bb1510651c73357ad8a44fcb4fdbf069
+    | Section: perl
+    | Priority: optional
+    | Filename: pool/main/libw/libwww-telegram-botapi-perl/libwww-telegram-botapi-perl_0.12-2_all.deb
+    | Size: 20464
+    | MD5sum: 89aa8f74d1fcc5fd5e9a830260cce7ee
+  [检材3-1] @ 0x7876BD82C (30838.7MB):
+    | dbf069
+    | Section: perl
+    | Priority: optional
+    | Filename: pool/main/libw/libwww-telegram-botapi-perl/libwww-telegram-botapi-perl_0.12-2_all.deb
+    | Size: 20464
+    | MD5sum: 89aa8f74d1fcc5fd5e9a830260cce7ee
+  [检材3-1] @ 0x788CBBCFE (30860.7MB):
+    | instead of importing link shortening functions into the
+    | namespace of your module.
+    | Package: libwww-telegram-botapi-perl
+    | Description-md5: bb1510651c73357ad8a44fcb4fdbf069
+    | Description-en: module of Telegram Bot API in Perl
+    | WWW::Telegram::BotAPI is an implementation of Telegram Bot API in Perl,
+
+--- 'b'@bot'' [telegram-bot] (11 hits) ---
+  [检材3-1] @ 0x774816A44 (30536.1MB):
+    | memblock_region *regions;
+    | char *name;
+    | * struct memblock - memblock allocator metadata
+    | * @bottom_up: is bottom up direction?
+    | * @current_limit: physical address of the current allocation limit
+    | * @memory: usable memory regions
+  [检材3-1] @ 0x7B322B431 (31538.2MB):

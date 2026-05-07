@@ -1,0 +1,7 @@
+- id: B001
+  time: '2026-05-07 15:01:26'
+  from: server_analyst
+  blocker: VG volum / LV root 数据区加密 (PE区域全零, 疑似 dm-crypt plain mode)
+  needs: WSL 环境 + ewfmount + kpartx + cryptsetup, 已知挂载密码 FIC-{e404d6e66586e9460c23755afab5a872bcf78ab4}
+  status: open
+  routed_to: ''

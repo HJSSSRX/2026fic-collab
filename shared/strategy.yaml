@@ -1,0 +1,7 @@
+current_phase: Phase 4 完成 - Hub 联调通过, 准备 Phase 3 (改造 role_prompt)
+priorities:
+- 'binary_analyst: F-B003 已分析出可用期望 MD5 作 AES key, 但 progress 仍 paused, 需要新会话推动执行'
+- 'server_analyst: LV root 加密 (B001), 等待主设计师本机用 WSL 协助解密'
+- 'computer_analyst / mobile_analyst: 远程机尚未加入 Hub, 等 Phase 3 完成后部署'
+deferred: []
+notes: 'Phase 1+4 验证: Hub 7 大 API 全部联调通过. blockers.yaml 已记录 B001 为基线.'

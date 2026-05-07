@@ -127,27 +127,85 @@ grep -rl "tags:.*windows" knowledge/solved/
 
 ---
 
-## 协作协议
+## 🔗 协作协议（v3 HTTP Hub）
 
-你是远程协作团队的一员。发现重要线索时，记录到本地 `findings.yaml`，格式：
+你是 4 角色协作团队的一员。所有协作必须通过 **HTTP Hub** 完成。**这不是建议，是强制流程。**
 
-```yaml
-- id: F001
-  time: "2026-05-06 23:00"
-  from: computer_analyst
-  type: evidence
-  summary: "简要描述"
-  detail: "详细信息、文件路径、证据"
-  related_to: [server_analyst, mobile_analyst]  # 如果跨角色相关
+### Hub 地址
+你是**远程机角色**。Hub 运行在主机上，你需要主机 IP：
+```powershell
+$Hub = "http://<主机IP>:8765"   # 例如 http://192.168.1.10:8765
+```
+> **如果用户没告诉你主机 IP，立刻问用户**："请告诉我 Hub 的主机 IP 和端口"。
+
+### 启动时必做（30 秒）— 不做完不准开工
+```powershell
+$Hub = "http://<主机IP>:8765"   # 替换为真实 IP
+
+# 1. 验证 Hub 可达
+try { Invoke-RestMethod "$Hub/ping" -TimeoutSec 3 } catch { Write-Host "Hub 离线，停工通知用户"; exit }
+
+# 2. 拉取当前态势：主设计师策略 + 队友发现 + 进度 + 卡点 + 给你的提问
+Invoke-RestMethod "$Hub/session"   | ConvertTo-Json -Depth 5
+Invoke-RestMethod "$Hub/findings"  | ConvertTo-Json -Depth 5
+Invoke-RestMethod "$Hub/progress"  | ConvertTo-Json -Depth 5
+Invoke-RestMethod "$Hub/questions?to=computer_analyst"
 ```
 
-### 同步方式
-主设计师会告知具体同步方式（Git/LAN）。在收到指示前，先专注分析，把发现写入本地笔记。
+### 解出每题后必做（强制）— 不调 POST = 这题没解出
+```powershell
+$body = @{
+    from       = "computer_analyst"
+    type       = "evidence"        # evidence / answer / blocker
+    summary    = "Q1: OS版本=Windows 10 22H2"   # 简短一行
+    detail     = "reg key SOFTWARE\Microsoft\Windows NT\CurrentVersion"
+    related_to = @()                # 如关联其他角色，如 @("server_analyst")
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/findings" -Method POST -Body $body -ContentType "application/json"
+```
 
-### 跨角色线索提示
-- 如发现**服务器IP/域名** → 标记 `related_to: [server_analyst]`
-- 如发现**手机号/聊天记录** → 标记 `related_to: [mobile_analyst]`
-- 如发现**加密文件/可疑程序** → 标记 `related_to: [binary_analyst]`
+### 进度推进（每完成一阶段一次）
+```powershell
+$body = @{
+    status       = "in_progress"    # idle / in_progress / blocked / paused / done
+    current_task = "Q5 VPN 端口"
+    completed    = @("Q1", "Q2", "Q3")
+    pending      = @("Q4-Q10")
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/progress/computer_analyst" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 遇到卡点（写完立刻做下一题，主设计师会路由）
+```powershell
+$body = @{
+    from    = "computer_analyst"
+    blocker = "卡在...的具体描述"
+    needs   = "需要的资源/工具/线索"
+    status  = "open"
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/session/blocker" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 跨角色提问与回答
+```powershell
+# 提问别人
+$body = @{
+    from     = "computer_analyst"
+    to       = "server_analyst"
+    question = "你的服务器配置里见过这个 IP/域名 xxx 吗？"
+} | ConvertTo-Json
+Invoke-RestMethod "$Hub/questions" -Method POST -Body $body -ContentType "application/json"
+
+# 回答别人（id 形如 Q001）
+$body = @{ answer = "我这边的答案是..." } | ConvertTo-Json
+Invoke-RestMethod "$Hub/questions/Q001/reply" -Method POST -Body $body -ContentType "application/json"
+```
+
+### 跨角色线索（你必须主动 push 给相关角色）
+- 发现**服务器 IP / 域名 / VPN 配置** → `related_to = @("server_analyst")`
+- 发现**手机号 / 聊天记录截图 / Telegram 联系人** → `related_to = @("mobile_analyst")`
+- 发现**加密文件 / 可疑程序 / U 盘相关线索** → `related_to = @("binary_analyst")`
+- 发现**勒索软件解密线索 / 保险柜密码** → `related_to = @("server_analyst","binary_analyst")`，可能与服务器/U盘联动
 
 ---
 
