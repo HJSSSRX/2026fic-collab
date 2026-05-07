@@ -1,5 +1,30 @@
 # 2026FIC 初赛 — Findings (append-only)
 # Each role appends findings here. Never modify other roles' entries.
+
+- id: F-B001
+  time: "2026-05-07 14:20"
+  from: binary_analyst
+  type: evidence
+  summary: "二进制-1: SampleVC.exe MD5=764789dd9c095d74b6b258cf0f7568b2"
+  detail: "从检材4-U盘.E01提取(原始NTFS卷,offset=0), icat提取后python hashlib计算"
+  related_to: []
+
+- id: F-B002
+  time: "2026-05-07 14:20"
+  from: binary_analyst
+  type: evidence
+  summary: "二进制-2: 编译日期=2026-04-17 (PE TimeDateStamp)"
+  detail: "PE32+ x64, MSVC 14.42 (VS2022), TimeDateStamp=2026-04-17 05:53:20 UTC"
+  related_to: []
+
+- id: F-B003
+  time: "2026-05-07 14:20"
+  from: binary_analyst
+  type: evidence
+  summary: "二进制-3: 密码16字符,AES-128加密,期望MD5=afb977ac242ad60cf46124ad72ca5149"
+  detail: "程序流程:密码→MD5→与硬编码哈希strncmp比较→AES-128解密vc→VHD。AES S-box在0x4130,期望哈希在VA 0x1400023C0。可直接用期望MD5作AES key解密vc文件。"
+  related_to: []
+
 - id: F-S001
   time: "2026-05-07 14:18"
   from: server_analyst

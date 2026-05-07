@@ -28,8 +28,12 @@ server_analyst:
   blocker: "VG volum LV root PE数据全零, 需要WSL ewfmount+kpartx+vgscan 或 cryptsetup解密"
 
 binary_analyst:
-  status: idle
-  current_task: ""
-  completed: []
+  status: paused
+  current_task: "Q3 密码逆向 - 需破解MD5或直接AES解密验证"
+  completed:
+    - "Q1: MD5=764789dd9c095d74b6b258cf0f7568b2"
+    - "Q2: 编译日期=2026-04-17"
   pending:
-    - "二进制程序取证 Q1-Q5 (5题)"
+    - "Q3: 破解MD5 afb977ac242ad60cf46124ad72ca5149 或用它直接作AES key解密"
+    - "Q4: 用密码解密vc→VHD,检查文件后缀"
+    - "Q5: 分析交易记录,统计收款金额"
