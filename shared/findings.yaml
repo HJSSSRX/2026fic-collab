@@ -1,3 +1,59 @@
 # 2026FIC 初赛 — Findings (append-only)
 # Each role appends findings here. Never modify other roles' entries.
-[]
+- id: F-S001
+  time: "2026-05-07 14:18"
+  from: server_analyst
+  type: evidence
+  summary: "磁盘映射: sda=检材3-2, sdb=检材3-1; 两个VG跨双盘"
+  detail: |
+    VG volum → LV root (56GB): pv0=sda2(检材3-2 s8204288) + pv1=sdb1(检材3-1 s2048)
+    VG root → LV data (60GB): pv1=sdb2(检材3-1 s58593280) + pv0=sda3(检材3-2 s66797568)
+    extent_size=4MB, LVM2 2.03.31, 创建于2026-04-11
+  related_to: []
+
+- id: F-S002
+  time: "2026-05-07 14:18"
+  from: server_analyst
+  type: answer
+  summary: "Q1: OS版本 = Debian 13 (trixie), VERSION_ID=13, DEBIAN_VERSION_FULL=13.0"
+  detail: |
+    来源: swap分区中的/etc/os-release内容
+    PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+    内核: 6.12.38+deb13-amd64
+    答案: 13.0 (参考格式0.9暗示小数)
+  related_to: []
+
+- id: F-S003
+  time: "2026-05-07 14:18"
+  from: server_analyst
+  type: evidence
+  summary: "LV data上有btrfs(UUID:2fe53132-155e-c444-b224-e29cb4201c0e), LV root PE数据区全零(可能dm-crypt加密)"
+  detail: |
+    btrfs在检材3-1 sdb2区域, 偏移~33MB从PE起始
+    LV root前50MB全零, 无LUKS签名, 疑似plain mode加密
+    挂载密码: FIC-{e404d6e66586e9460c23755afab5a872bcf78ab4}
+    XFS签名也在检材3-1上发现(可能Docker overlay)
+  related_to: []
+
+- id: F-S004
+  time: "2026-05-07 14:18"
+  from: server_analyst
+  type: evidence
+  summary: "服务器安装了docker, nginx, ngrok, postgresql"
+  detail: |
+    docker: 检材3-1 0x6FF809353, 检材3-2 0xC04A027(swap)
+    nginx: 检材3-1 0x6FF845D38
+    ngrok: 检材3-1 0x6FF8432C4 (二进制), 检材3-2 0xFDCD200D (apt源)
+    postgresql: 检材3-2 /var/lib/postgresql 路径
+  related_to: [computer_analyst]
+
+- id: F-S005
+  time: "2026-05-07 14:18"
+  from: server_analyst
+  type: blocker
+  summary: "需要WSL挂载LVM+解密根文件系统才能继续"
+  detail: |
+    推荐: ewfmount→kpartx→vgscan→cryptsetup open→mount
+    或: 直接从btrfs(LV data)解析文件树
+    Q2(UUID), Q3(Docker), Q4(快照), Q5-Q15 都依赖文件系统访问
+  related_to: []

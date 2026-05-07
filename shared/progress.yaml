@@ -14,12 +14,18 @@ mobile_analyst:
     - "手机取证 Q1-Q17 (17题)"
 
 server_analyst:
-  status: idle
-  current_task: ""
-  completed: []
+  status: blocked
+  current_task: "需要WSL挂载LVM+解密根文件系统"
+  completed:
+    - "磁盘映射: sda=检材3-2, sdb=检材3-1"
+    - "LVM解析: VG volum/LV root + VG root/LV data"
+    - "Q1: OS版本=13.0 (Debian 13 trixie)"
+    - "Q16推测: A(ntfs)未被使用"
+    - "全盘字符串扫描: 发现docker/nginx/ngrok/postgresql"
   pending:
-    - "服务器取证 Q1-Q17 (17题)"
+    - "服务器取证 Q2-Q15, Q17 (15题)"
     - "互联网取证 Q1-Q3 (3题)"
+  blocker: "VG volum LV root PE数据全零, 需要WSL ewfmount+kpartx+vgscan 或 cryptsetup解密"
 
 binary_analyst:
   status: idle
